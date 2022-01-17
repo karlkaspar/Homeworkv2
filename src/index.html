@@ -18,27 +18,27 @@
                 <div class="formHeader">
                     <div class="middleLine"></div>
                     <ul class="stepsIndicatorContainer">
-                        <li stepId="1" class="stepIndicator active">
+                        <li stepid="1" class="stepIndicator active">
                             <a onclick="setStep(this, 'indicator')" href="#">
-                                <span>Application</span>
+                                <span>Properties</span>
                             </a>
                         </li>
-                        <li stepId="2" class="stepIndicator">
+                        <li stepid="2" class="stepIndicator">
                             <a onclick="setStep(this, 'indicator')" href="#">
-                                <span>Personal data</span>
+                                <span>Health</span>
                             </a>
                         </li>
-                        <li stepId="3" class="stepIndicator">
+                        <li stepid="3" class="stepIndicator">
                             <a onclick="setStep(this, 'indicator')" href="#">
-                                <span>Personality</span>
+                                <span>Education</span>
                             </a>
                         </li>
-                        <li stepId="4" class="stepIndicator">
+                        <li stepid="4" class="stepIndicator">
                             <a onclick="setStep(this, 'indicator')" href="#">
-                                <span>Income</span>
+                                <span>Additional info</span>
                             </a>
                         </li>
-                        <li stepId="5" class="stepIndicator">
+                        <li stepid="5" class="stepIndicator">
                             <a onclick="setStep(this, 'indicator')" href="#">
                                 <span>Send application</span>
                             </a>
@@ -46,7 +46,11 @@
                     </ul>
                 </div>
                 <div class="content">
-                    <section stepId="1" class="step active">
+                    <section stepid="1" class="step active">
+                        <h2>Properties</h2>
+                        <div class="notification error">
+                            Please fill all fields!
+                        </div>
                         <div class="formFields">
                             <div class="formItem">
                                 <div class="text">
@@ -59,11 +63,11 @@
                             </div>
                             <div class="formItem">
                                 <div class="text">
-                                    2. Have you smoked during the last 2 years?
+                                    2. Are you married?
                                 </div>
                                 <div class="field">
                                     <label class="radioContainer">
-                                        <input type="radio"  name="radio">
+                                        <input type="radio" name="radio">
                                         <span class="checkmark"></span>
                                         <span class="text">Yes</span>
                                     </label>
@@ -76,14 +80,83 @@
                             </div>
                         </div>
                     </section>
-                    <section stepId="2" class="step">2</section>
-                    <section stepId="3" class="step">3</section>
-                    <section stepId="4" class="step">4</section>
-                    <section stepId="5" class="step">5</section>
+                    <section stepid="2" class="step">
+                        <h2>Health</h2>
+                        <div class="formFields">
+                            <div class="formItem">
+                                <div class="text">
+                                    1. Have you had any official disability?
+                                </div>
+                                <div class="field">
+                                    <label class="checkContainer">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="formItem">
+                                <div class="text">
+                                    2. Have you been unable to work for longer than 4 subsequent weeks due to disease?
+                                </div>
+                                <div class="field">
+                                    <label class="checkContainer">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section stepid="3" class="step">
+                        <h2>Education</h2>
+                        <div class="formFields">
+                            <div class="formItem inline">
+                                <div class="text">
+                                    1. Haridus?
+                                </div>
+                                <div class="field">
+                                    <div class="selectWrapper">
+                                        <select class="form-field-medium" id="education" name="education">
+                                            <option id=""></option>
+                                            <option value="93">Põhiharidus</option>
+                                            <option value="92">Keskharidus</option>
+                                            <option selected="" value="11389">Kutseharidus</option>
+                                            <option value="11390">Rakenduslik kõrgharidus</option>
+                                            <option value="91">Kõrgem haridus</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section stepid="4" class="step">
+                        <h2>Additional info</h2>
+                        <div class="formFields">
+                            <div class="formItem inline">
+                                <div class="text">
+                                    1. Describe your current job?
+                                </div>
+                                <div class="field">
+                                    <textarea cols="40" rows="10" placeholder="Master scripter, hacker etc"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section stepid="5" class="step">
+                        <h2>
+                            Do you confirm that the information above is correct and that you agree to the terms of
+                            service ?
+                        </h2>
+                        <input type="checkbox" class="conditions">I confirm that the data above is correct,
+                        and I agree to the terms of service.
+                        <div class="error">
+                            Please agree to the terms of service and confirm the validity of your data!
+                        </div>
+                    </section>
                 </div>
                 <div class="formFooter">
-                    <button class="back" type="button">Back</button>  
-                    <button class="continue" type="button">Continue</button>  
+                    <button class="back" type="button">Back</button>
+                    <button class="continue" type="button" onclick="setStep(null, 'forward')">Continue</button>
                 </div>
             </form>
         </div>

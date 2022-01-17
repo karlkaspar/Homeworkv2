@@ -4,6 +4,10 @@ button {
     border-radius: 3px;
     border-style: none;
     padding: 10px 15px 10px 15px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
     &.continue {
         background-color: rgb(238, 112, 35);
         color: #ffffff;

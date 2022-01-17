@@ -1,0 +1,10 @@
+.notification {
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    display: none;
+    &.error {
+        border-color: rgb(226, 137, 141);
+        background: #f9ded3;
+    }
+}

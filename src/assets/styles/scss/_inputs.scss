@@ -46,6 +46,18 @@ input[type="text"] {
             border: 1px solid #fdc129;
             background-color: #fdc129;
         }
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 3px;
+            left: 2.5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #ee7023;
+            border: 2px solid #fff;
+        }
     }
     .text {
         margin-top: 10px;
@@ -57,21 +69,109 @@ input[type="text"] {
     background-color: #ee7023;
 }
 
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-    top: 3px;
-    left: 3px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #ee7023;
-    border: 2px solid #FFF;
-}
-
 .radioContainer input:checked + .checkmark:after {
     display: block;
 }
 
 /*End custom radio button*/
+
+/* Custom checkbox*/
+.checkContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border: 1px solid #99d3cb;
+        border-radius: 3px;
+        background-color: #ffffff;
+        &:hover {
+            background-color: #fdc129;
+            border: 1px solid #fdc129;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkContainer input:checked ~ .checkmark {
+    background-color: #ee7023;
+    border: 1px solid #fdc129;
+}
+
+/* Show the checkmark when checked */
+.checkContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/*End custom checkbox*/
+
+/* Custom select element */
+.selectWrapper {
+    position: relative;
+    &::before {
+        content: "";
+        background-image: url("../../img/upDownArrow.svg");
+        background-size: 15px 15px;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 15px;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    select {
+        min-height: 46px;
+        background-color: #ebf8f2;
+        border-radius: 3px;
+        border: 1px solid #d1e6e5;
+        font-size: 16px;
+        line-height: 46px;
+        padding: 0 30px 0 5px;
+        -moz-appearance: none; /* Firefox */
+        -webkit-appearance: none; /* Safari and Chrome */
+        appearance: none;
+    }
+}
+
+/* Custom select element end*/
+
+textarea {
+    border: 1px solid #8acdc3;
+    padding: 14px 10px 12px 10px;
+    border-radius: 3px;
+}

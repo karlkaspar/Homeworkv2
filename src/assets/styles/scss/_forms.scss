@@ -24,6 +24,13 @@ This file contains our directly form related css
             bottom: 0;
             left: 0;
             right: 0;
+            .active {
+                span {
+                    &:before {
+                        background: #f35b1c;
+                    }
+                }
+            }
             li {
                 list-style: none;
                 display: inline-block;
@@ -33,27 +40,29 @@ This file contains our directly form related css
                     display: inline-block;
                     color: #512b2b;
                     line-height: 35px;
-                    :before {
-                        border-radius: 50%;
-                        min-width: 30px;
-                        max-width: 30px;
-                        height: 30px;
-                        display: block;
-                        text-align: center;
-                        background: #fdc129;
-                        counter-increment: section;
-                        content: counter(section);
-                        color: #fff;
-                        font-size: 19px;
-                        font-weight: bold;
-                        margin: 0 auto;
-                        transition: all 200ms ease-in-out;
-                        line-height: 32px;
+                    span {
+                        &:before {
+                            border-radius: 50%;
+                            min-width: 30px;
+                            max-width: 30px;
+                            height: 30px;
+                            display: block;
+                            text-align: center;
+                            background: #fdc129;
+                            counter-increment: section;
+                            content: counter(section);
+                            color: #fff;
+                            font-size: 19px;
+                            font-weight: bold;
+                            margin: 0 auto;
+                            transition: all 200ms ease-in-out;
+                            line-height: 32px;
+                        }
                     }
                 }
             }
         }
-  
+
         .stepIndicator.active a::before {
             background: #f35b1c;
             transition: all 200ms ease-in-out;
@@ -62,8 +71,7 @@ This file contains our directly form related css
             background: #ee7023;
             transition: all 200ms ease-in-out;
         }
-        /*Pseudo element bofer was getting a underline*/
-        .stepIndicator a:hover, .stepIndicator a:hover {
+        .stepIndicator a:hover {
             text-decoration: none;
         }
         .formHeader {
@@ -84,19 +92,29 @@ This file contains our directly form related css
     }
     .content {
         .step {
-            padding: 15px ;
-            display:none;
+            padding: 15px 15px 30px 15px;
+            display: none;
             &.active {
                 display: block;
             }
-       
             .formFields {
                 .formItem {
+                    min-height: 44px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     &:not(:first-child) {
                         margin-top: 20px;
+                    }
+                    &.inline {
+                        justify-content: start;
+                        padding-left: 20%;
+                        .text {
+                            width: 210px;
+                        }
+                        .field {
+                            margin-left: 20px;
+                        }
                     }
                     .field {
                         display: flex;
@@ -118,4 +136,4 @@ This file contains our directly form related css
         align-items: center;
         padding: 20px;
     }
-} 
+}

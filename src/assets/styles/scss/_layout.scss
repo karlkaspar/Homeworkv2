@@ -3,7 +3,7 @@ This file governs our basic layouts
 */
 
 html {
-    color: #fbf2ea;
+    color: #512b2b;
     height: 100%;
     body {
         counter-reset: section;
@@ -13,7 +13,6 @@ html {
             >.inner {
                 background-color: #FFF;
                 border-radius: 3px;
-                color: #000000;
             }
         }
     }
