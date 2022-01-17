@@ -28,9 +28,12 @@ This file contains our directly form related css
                 list-style: none;
                 display: inline-block;
                 a {
+                    text-decoration: none;
                     font-size: 13px;
                     display: inline-block;
-                    ::before {
+                    color: #512b2b;
+                    line-height: 35px;
+                    :before {
                         border-radius: 50%;
                         min-width: 30px;
                         max-width: 30px;
@@ -45,6 +48,7 @@ This file contains our directly form related css
                         font-weight: bold;
                         margin: 0 auto;
                         transition: all 200ms ease-in-out;
+                        line-height: 32px;
                     }
                 }
             }
@@ -80,14 +84,38 @@ This file contains our directly form related css
     }
     .content {
         .step {
+            padding: 15px ;
             display:none;
             &.active {
                 display: block;
             }
+       
+            .formFields {
+                .formItem {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &:not(:first-child) {
+                        margin-top: 20px;
+                    }
+                    .field {
+                        display: flex;
+                        align-items: center;
+                        .unit {
+                            color: rgb(163, 139, 128);
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
         }
     }
     .formFooter {
-        height: 100px;
+        height: 60px;
         background-color: #f8f8f8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
     }
-}
+} 

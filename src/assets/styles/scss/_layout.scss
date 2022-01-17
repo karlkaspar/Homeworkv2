@@ -6,6 +6,7 @@ html {
     color: #fbf2ea;
     height: 100%;
     body {
+        counter-reset: section;
         height: 100%;
         main {
             height: 100%;

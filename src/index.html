@@ -46,14 +46,44 @@
                     </ul>
                 </div>
                 <div class="content">
-                    <section stepId="1" class="step active">1</section>
+                    <section stepId="1" class="step active">
+                        <div class="formFields">
+                            <div class="formItem">
+                                <div class="text">
+                                    1. Monthly income: salary, bonuses, dividends and pensions (after tax)
+                                </div>
+                                <div class="field">
+                                    <input type="text">
+                                    <span class="unit">€</span>
+                                </div>
+                            </div>
+                            <div class="formItem">
+                                <div class="text">
+                                    2. Have you smoked during the last 2 years?
+                                </div>
+                                <div class="field">
+                                    <label class="radioContainer">
+                                        <input type="radio"  name="radio">
+                                        <span class="checkmark"></span>
+                                        <span class="text">Yes</span>
+                                    </label>
+                                    <label class="radioContainer">
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                        <span class="text">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <section stepId="2" class="step">2</section>
                     <section stepId="3" class="step">3</section>
                     <section stepId="4" class="step">4</section>
                     <section stepId="5" class="step">5</section>
                 </div>
                 <div class="formFooter">
-                    I am form footer
+                    <button class="back" type="button">Back</button>  
+                    <button class="continue" type="button">Continue</button>  
                 </div>
             </form>
         </div>

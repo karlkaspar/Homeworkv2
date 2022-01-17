@@ -1,0 +1,15 @@
+button {
+    height: 46px;
+    font-size: 18px;
+    border-radius: 3px;
+    border-style: none;
+    padding: 10px 15px 10px 15px;
+    &.continue {
+        background-color: rgb(238, 112, 35);
+        color: #ffffff;
+    }
+    &.back {
+        background-color: #d4b8a3;
+        color: rgb(81, 43, 43);
+    }
+}

@@ -3,12 +3,12 @@ $(window).ready(() => {
 
 
     setStep = (el, from) => {
-        let currentStep = $('.step.active').attr('stepId')
-        let stepWanted = $(el).parent().attr('stepId')
-        console.log('stepWanted', stepWanted, 'curStep', currentStep)
+        let curstep = $('.step.active').attr('stepId')
+        let newStep = $(el).parent().attr('stepId')
 
+        $('.stepIndicator').removeClass('active')
+        $(el).parent().addClass('active')
         $('.step').removeClass('active')
         $('.step[stepId=' + stepWanted + ']').addClass('active')
-
     }
 })
