@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,48 @@
     <script src="./assets/js/jquery3.6.0.js"></script>
     <script src="./assets/js/custom.js"></script>
 </head>
+
 <body>
     <main>
         <div class="inner">
             <h1>Life insurance application</h1>
             <form class="form" action="#">
                 <div class="formHeader">
-                    I am form header
+                    <div class="middleLine"></div>
+                    <ul class="stepsIndicatorContainer">
+                        <li stepId="1" class="stepIndicator active">
+                            <a onclick="setStep(this, 'indicator')" href="#">
+                                <span>Application</span>
+                            </a>
+                        </li>
+                        <li stepId="2" class="stepIndicator">
+                            <a onclick="setStep(this, 'indicator')" href="#">
+                                <span>Personal data</span>
+                            </a>
+                        </li>
+                        <li stepId="3" class="stepIndicator">
+                            <a onclick="setStep(this, 'indicator')" href="#">
+                                <span>Personality</span>
+                            </a>
+                        </li>
+                        <li stepId="4" class="stepIndicator">
+                            <a onclick="setStep(this, 'indicator')" href="#">
+                                <span>Income</span>
+                            </a>
+                        </li>
+                        <li stepId="5" class="stepIndicator">
+                            <a onclick="setStep(this, 'indicator')" href="#">
+                                <span>Send application</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="steps">
-                    Here goes content
+                <div class="content">
+                    <section stepId="1" class="step active">1</section>
+                    <section stepId="2" class="step">2</section>
+                    <section stepId="3" class="step">3</section>
+                    <section stepId="4" class="step">4</section>
+                    <section stepId="5" class="step">5</section>
                 </div>
                 <div class="formFooter">
                     I am form footer
@@ -26,4 +59,5 @@
         </div>
     </main>
 </body>
+
 </html>

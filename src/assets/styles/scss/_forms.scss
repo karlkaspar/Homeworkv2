@@ -9,6 +9,82 @@ This file contains our directly form related css
     .formHeader {
         height: 100px;
         background-color: #fdf9f6;
+        position: relative;
+        .stepsIndicatorContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding-left: 0px;
+            justify-content: space-between;
+            width: 95%;
+            height: 32px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            li {
+                list-style: none;
+                display: inline-block;
+                a {
+                    font-size: 13px;
+                    display: inline-block;
+                    ::before {
+                        border-radius: 50%;
+                        min-width: 30px;
+                        max-width: 30px;
+                        height: 30px;
+                        display: block;
+                        text-align: center;
+                        background: #fdc129;
+                        counter-increment: section;
+                        content: counter(section);
+                        color: #fff;
+                        font-size: 19px;
+                        font-weight: bold;
+                        margin: 0 auto;
+                        transition: all 200ms ease-in-out;
+                    }
+                }
+            }
+        }
+  
+        .stepIndicator.active a::before {
+            background: #f35b1c;
+            transition: all 200ms ease-in-out;
+        }
+        .stepIndicator:hover ::before {
+            background: #ee7023;
+            transition: all 200ms ease-in-out;
+        }
+        /*Pseudo element bofer was getting a underline*/
+        .stepIndicator a:hover, .stepIndicator a:hover {
+            text-decoration: none;
+        }
+        .formHeader {
+            position: relative;
+            background: #f8f8f8;
+        }
+        .middleLine {
+            width: 87%;
+            height: 2px;
+            background: orange;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    .content {
+        .step {
+            display:none;
+            &.active {
+                display: block;
+            }
+        }
     }
     .formFooter {
         height: 100px;
