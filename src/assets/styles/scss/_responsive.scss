@@ -1,0 +1,22 @@
+/*
+Only rules that are related to responsive design
+*/
+
+@media (min-width: 1300px) {
+    main {
+        margin-top: 200px;
+        > .inner {
+            width: 1260px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    main {
+        margin: 0 5px 0 5px;
+        > .inner {
+            width: 100%;
+        }
+    }
+}

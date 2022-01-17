@@ -1,0 +1,20 @@
+/* 
+This file governs our basic layouts
+*/
+
+html {
+    color: #fbf2ea;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    body {
+        height: 100%;
+        main {
+            height: 100%;
+            >.inner {
+                background-color: #FFF;
+                border-radius: 3px;
+                color: #000000;
+            }
+        }
+    }
+}

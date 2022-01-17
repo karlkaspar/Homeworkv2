@@ -1,1 +1,3 @@
-console.log("Hello world")
+$(window).ready(() => {
+    console.log("I am ready")
+})

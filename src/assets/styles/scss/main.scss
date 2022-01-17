@@ -1,3 +1,8 @@
-html {
-    color: #fbf2ea
-}
+/*
+Todo, custom variables and breakpoints from separate file.
+*/
+
+@import "./responsive";
+@import "./typography";
+@import "./layout";
+@import "./forms";

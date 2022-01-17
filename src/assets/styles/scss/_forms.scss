@@ -1,0 +1,17 @@
+/*
+This file contains our directly form related css 
+*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    .formHeader {
+        height: 100px;
+        background-color: #fdf9f6;
+    }
+    .formFooter {
+        height: 100px;
+        background-color: #f8f8f8;
+    }
+}
