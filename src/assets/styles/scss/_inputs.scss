@@ -32,13 +32,20 @@ input[type="text"] {
         cursor: pointer;
         height: 0;
         width: 0;
+        &:checked + .checkmark {
+            border: 0;
+            background-color: #ee7023;
+            &:after {
+                display: block;
+            }
+        }
     }
     .checkmark {
         position: absolute;
         top: 0;
         left: 0;
-        height: 25px;
-        width: 25px;
+        height: 26px;
+        width: 26px;
         border: 1px solid #8acdc3;
         background-color: transparent;
         border-radius: 50%;
@@ -52,8 +59,8 @@ input[type="text"] {
             display: none;
             top: 3px;
             left: 2.5px;
-            width: 16px;
-            height: 16px;
+            width: 17px;
+            height: 17px;
             border-radius: 50%;
             background-color: #ee7023;
             border: 2px solid #fff;
@@ -63,16 +70,6 @@ input[type="text"] {
         margin-top: 10px;
     }
 }
-// Lower radio button code probably cannot be written in the scss style.
-.radioContainer input:checked + .checkmark {
-    border: 0;
-    background-color: #ee7023;
-}
-
-.radioContainer input:checked + .checkmark:after {
-    display: block;
-}
-
 /*End custom radio button*/
 
 /* Custom checkbox*/
@@ -94,6 +91,13 @@ input[type="text"] {
         cursor: pointer;
         height: 0;
         width: 0;
+        &:checked + .checkmark {
+            background-color: #ee7023;
+            border: 1px solid #fdc129;
+            &:after {
+                display: block;
+            }
+        }
     }
     /* Create a custom checkbox */
     .checkmark {
@@ -125,18 +129,6 @@ input[type="text"] {
         }
     }
 }
-
-/* When the checkbox is checked, add a blue background */
-.checkContainer input:checked ~ .checkmark {
-    background-color: #ee7023;
-    border: 1px solid #fdc129;
-}
-
-/* Show the checkmark when checked */
-.checkContainer input:checked ~ .checkmark:after {
-    display: block;
-}
-
 /*End custom checkbox*/
 
 /* Custom select element */
@@ -168,7 +160,6 @@ input[type="text"] {
         appearance: none;
     }
 }
-
 /* Custom select element end*/
 
 textarea {
