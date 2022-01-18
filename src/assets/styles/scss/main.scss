@@ -2,7 +2,6 @@
 Todo, custom variables and breakpoints from separate file.
 */
 
-@import "./responsive";
 @import "./typography";
 @import "./layout";
 @import "./forms";
@@ -11,3 +10,4 @@ Todo, custom variables and breakpoints from separate file.
 @import "./notifications";
 @import "./tooltips";
 @import "./utils";
+@import "./responsive"; 

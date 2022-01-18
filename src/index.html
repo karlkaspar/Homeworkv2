@@ -20,7 +20,7 @@
                 <div class="formHeader">
                     <div class="middleLine"></div>
                     <ul class="stepsIndicatorContainer">
-                        <li stepid="1" class="stepIndicator active">
+                        <li stepid="1" class="stepIndicator">
                             <a onclick="setStep(this, 'indicator')" href="#">
                                 <span>Properties</span>
                             </a>
@@ -48,7 +48,14 @@
                     </ul>
                 </div>
                 <div class="content">
-                    <section stepid="1" class="step active">
+                    <section id="intro">
+                        <h2>Introduction</h2>
+                        <div class="text">
+                            You are about to start filling out a life insurance application.
+                            <p>Press "Continue" to begin.</p>   
+                        </div>
+                    </section>
+                    <section stepid="1" class="step">
                         <div class="flexParent">
                             <h2>Properties</h2>
                             <div class="tooltip" title="Please fill all of the fields">ⓘ</div>
@@ -148,7 +155,7 @@
                                     1. Describe your current job?
                                 </div>
                                 <div class="field">
-                                    <textarea cols="40" rows="10" placeholder="Master scripter, hacker etc"></textarea>
+                                    <textarea  class="w-100" cols="40" rows="10" placeholder="Master scripter, hacker etc"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -174,9 +181,12 @@
                             </div>
                         </div>
                     </section>
+                    <section id="success">
+                        <h3>Your application has been successfully sent!</h3>
+                    </section>
                 </div>
                 <div class="formFooter">
-                    <button class="back" type="button">Back</button>
+                    <button class="back" type="button" onclick="setStep(null, 'back')">Back</button>
                     <button class="continue" type="button" onclick="setStep(null, 'forward')">Continue</button>
                 </div>
             </form>

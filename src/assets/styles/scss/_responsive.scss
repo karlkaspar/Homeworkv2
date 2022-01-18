@@ -20,3 +20,56 @@ Only rules that are related to responsive design
         }
     }
 }
+
+@media (max-width: 769px) {
+    .form {
+        .content {
+            .step {
+                .formFields {
+                    padding-right: 0;
+                    .formItem {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        &.inline {
+                            padding-left: 0;
+                        }
+                        .field {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .form {
+        .formHeader {
+            padding: 15px 10px 15px 10px;
+            height: auto;
+            .middleLine {
+                display: none;
+            }
+            .stepsIndicatorContainer {
+                height: auto;
+                position: relative;
+                flex-direction: column;
+                li {
+                    &:not(:first-child) {
+                        margin-top: 10px;
+                    }
+                    a {
+                        display: flex;
+                        &:before {
+                            margin: 0
+                        }
+                        span {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -7,16 +7,27 @@ $(window).ready(() => {
     })
 
     setStep = (el, from) => {
-
-        let curstep = $('.step.active').attr('stepid')
+        let curstep = parseInt($('.step.active').attr('stepid'))
         let newStep = ''
-        newStep = (from == 'forward') ? parseInt(curstep) + 1 : $(el).parent().attr('stepid') // Decide if event came from "Continue" button or step indicator
 
-        console.log(curstep, newStep)
+        if (isNaN(curstep)) curstep = 0 // If the current step is intro
+
+        switch (from) { // Decide if event came from "Continue" or "Back" button or step indicator
+            case 'forward':
+                newStep = curstep + 1
+            break;
+            case 'back':
+                newStep = curstep - 1
+            break;
+            default:
+                newStep = $(el).parent().attr('stepid')
+                if (isNaN(curstep)) newStep = 1
+            break;
+        }
         if (validator(curstep, newStep)) {
             $('.notification.error').hide()
             $('.stepIndicator').removeClass('active')
-            if (from == 'forward') { // Form forward moving action from "Continue" button
+            if (from == 'forward' || from == 'back') { // Form forward moving action from "Continue" button
                 $('.stepIndicator[stepid="' + newStep + '"').addClass('active')
             } else { // Form forward moving action from above step indicators
                 $(el).parent().addClass('active')
@@ -24,11 +35,17 @@ $(window).ready(() => {
             $('.step').removeClass('active')
             $('.step[stepid=' + newStep + ']').addClass('active')
             $('.step[stepid=' + newStep + ']').css('display', '')
-        } else {
-            console.log("Not valid")
         }
     }
+
     validator = (curstep, newStep) => {
+        if (curstep == 0 && newStep == 1) { // First step of the form
+            $('#intro').hide()
+            return true
+        }
+        if (curstep == 1 && curstep > newStep) {
+            location.reload()
+        }
         if (curstep != 5 && newStep < 5) {
             toggleInputsDisabled(false)
         } else if (curstep == 5 && newStep < 5) {
@@ -72,9 +89,9 @@ $(window).ready(() => {
         }
         if (curstep == 5 && newStep == 6) {
             if ($("section[stepid='5'] .conditions").is(":checked")) { // Hide all form sections and present finished section 
-                toggleAllFormSections(false) 
+                setFormFinished()
+
             } else {
-                console.log('is not checked')
                 showError(curstep)
             }
         }
@@ -100,7 +117,12 @@ $(window).ready(() => {
     }
 
     showError = (step) => {
-        console.log('showError')
         $('form .step[stepid=' + step + ' ] .notification.error').show()
+    }
+
+    setFormFinished = () => {
+        toggleAllFormSections(false)
+        $('#success').css('display', 'flex')
+        $('.formHeader > *, .formFooter > *').hide()
     }
 })

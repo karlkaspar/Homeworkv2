@@ -40,24 +40,22 @@ This file contains our directly form related css
                     display: inline-block;
                     color: #512b2b;
                     line-height: 35px;
-                    span {
-                        &:before {
-                            border-radius: 50%;
-                            min-width: 30px;
-                            max-width: 30px;
-                            height: 30px;
-                            display: block;
-                            text-align: center;
-                            background: #fdc129;
-                            counter-increment: section;
-                            content: counter(section);
-                            color: #fff;
-                            font-size: 19px;
-                            font-weight: bold;
-                            margin: 0 auto;
-                            transition: all 200ms ease-in-out;
-                            line-height: 32px;
-                        }
+                    &:before {
+                        border-radius: 50%;
+                        min-width: 30px;
+                        max-width: 30px;
+                        height: 30px;
+                        display: block;
+                        text-align: center;
+                        background: #fdc129;
+                        counter-increment: section;
+                        content: counter(section);
+                        color: #fff;
+                        font-size: 19px;
+                        font-weight: bold;
+                        margin: 0 auto;
+                        transition: all 200ms ease-in-out;
+                        line-height: 32px;
                     }
                 }
             }
@@ -128,6 +126,20 @@ This file contains our directly form related css
                     }
                 }
             }
+        }
+        #intro {
+            text-align: center;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;
+        }
+        #success {
+            display: none;
+            text-align: center;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
         }
     }
     .formFooter {
